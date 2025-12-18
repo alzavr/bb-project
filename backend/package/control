@@ -1,0 +1,8 @@
+Package: backend-api
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Your Name <you@example.com>
+Description: Backend API service written in Go
+

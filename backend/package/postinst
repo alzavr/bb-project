@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+if ! id backend-api >/dev/null 2>&1; then
+    useradd \
+      --system \
+      --no-create-home \
+      --shell /usr/sbin/nologin \
+      backend-api
+fi
+
+chown -R backend-api:backend-api /etc/backend-api
+chmod 750 /etc/backend-api
+chmod 640 /etc/backend-api/config.yaml
+
+systemctl daemon-reexec
+systemctl daemon-reload
+systemctl enable backend-api.service
+systemctl start backend-api.service
+
+exit 0
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+if systemctl is-active --quiet backend-api.service; then
+    systemctl stop backend-api.service
+fi
+
+systemctl disable backend-api.service || true
+
+exit 0
+

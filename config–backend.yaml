@@ -1,7 +1,0 @@
-database:
-host: "postgres"
-port: "5432"
-user: "testuser"
-password: "testpass"
-name: "test"
-sslmode: "disable"
